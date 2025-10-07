@@ -1,5 +1,6 @@
 {
-    "bulid": [
+    "version": 2,
+    "start": [
         {
             "src": "./server.js",
             "use": "@vercel/node"
