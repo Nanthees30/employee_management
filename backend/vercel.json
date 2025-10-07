@@ -1,6 +1,5 @@
 {
-    "version": 2,
-    "functions": {
+    "build": {
       "server.js": {
         "runtime": "nodejs18.x"
       }
