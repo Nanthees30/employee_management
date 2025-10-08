@@ -5,8 +5,6 @@ import { FaArrowLeft, FaEdit, FaTrashAlt, FaEye, FaPlus, FaSearch } from "react-
 import ViewEmployeeDetails from "./ViewEmployeeDetails";
 
 const EmployeeList = () => {
-  const API_URL = import.meta.env.VITE_SERVER_API_URL;  // <-- Add this line
-
   const [employees, setEmployees] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedEmployeeId, setSelectedEmployeeId] = useState(null);
@@ -16,7 +14,7 @@ const EmployeeList = () => {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const res = await axios.get(`${API_URL}/api/employees`);  // <-- Updated here
+        const res = await axios.get("http://localhost:5000/api/employees");
         setEmployees(res.data);
       } catch (err) {
         console.error("Error fetching employees:", err);
@@ -25,12 +23,12 @@ const EmployeeList = () => {
       }
     };
     fetchEmployees();
-  }, [API_URL]);
+  }, []);
 
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this employee?")) return;
     try {
-      await axios.delete(`${API_URL}/api/employees/${id}`);  // <-- Updated here
+      await axios.delete(`http://localhost:5000/api/employees/${id}`);
       setEmployees(employees.filter((emp) => emp.id !== id));
     } catch (err) {
       console.error("Error deleting employee:", err);
@@ -108,7 +106,7 @@ const EmployeeList = () => {
                   <td className="p-3 flex items-center gap-2">
                     {emp.profilePic ? (
                       <img
-                        src={`${API_URL}/uploads/${emp.profilePic}`}  // <-- Updated here
+                        src={`http://localhost:5000/uploads/${emp.profilePic}`}
                         alt="profile"
                         className="w-10 h-10 rounded-full object-cover"
                       />

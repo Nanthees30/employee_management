@@ -6,15 +6,7 @@ const fs = require("fs");
 const mysql = require("mysql2");
 
 const app = express();
-app.use(cors({
-  // Use your primary Vercel app URL and any temporary ones it might use
-  origin: [
-    'https://employee-management-teal.vercel.app', 
-    'https://employee-management-teal-nu.vercel.app', // Example of a temporary Vercel URL
-    'http://localhost:5173' // Include your local development port for testing
-  ], 
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-}));
+app.use(cors());
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
 
