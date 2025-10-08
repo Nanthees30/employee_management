@@ -7,7 +7,7 @@ const mysql = require("mysql2");
 
 const app = express();
 app.use(cors({
-  origin: 'https://employee-management-px59sposo-nanthees30s-projects.vercel.app', // React app URL
+  origin: 'https://employee-management-teal.vercel.app', // React app URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 }));
 app.use(express.json());
