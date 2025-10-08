@@ -4,7 +4,6 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { FaCamera, FaArrowLeft } from "react-icons/fa";
 
-//  Reusable Select Component
 const SelectInput = ({ label, register, name, options, errors }) => (
   <div className="mb-4">
     <label className="block mb-1 font-medium text-gray-700">{label}</label>
@@ -25,7 +24,6 @@ const SelectInput = ({ label, register, name, options, errors }) => (
   </div>
 );
 
-//  Reusable TextInput for other fields
 const TextInput = ({ label, register, name, placeholder, errors }) => (
   <div className="mb-4">
     <label className="block mb-1 font-medium text-gray-700">{label}</label>
@@ -58,7 +56,6 @@ const AddNewEmployee = () => {
 
   const profilePic = watch("profilePic");
 
-  // Select options
   const departments = ["HR", "IT", "Development", "Marketing"];
   const designations = [
     "Software Engineer",
@@ -162,7 +159,7 @@ const AddNewEmployee = () => {
           <FaArrowLeft size={18} />
         </button>
 
-        {/* Profile Picture */}
+       
         <div className="mb-8 flex flex-col items-center">
           <label htmlFor="profilePic" className="cursor-pointer relative group">
             {preview ? (
@@ -192,7 +189,7 @@ const AddNewEmployee = () => {
           </p>
         </div>
 
-        {/* Inputs Grid */}
+       
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <TextInput
             label="Employee Name"
@@ -245,7 +242,7 @@ const AddNewEmployee = () => {
           />
         </div>
 
-        {/* Buttons */}
+       
         <div className="flex justify-end gap-4 mt-8">
           <button
             type="button"
